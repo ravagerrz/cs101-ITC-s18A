@@ -1,0 +1,920 @@
+============================= test session starts ==============================
+platform linux2 -- Python 2.7.13, pytest-3.0.7, py-1.4.33, pluggy-0.4.0
+rootdir: /home/usama/Documents/ITC/assignments/A4/assignment72, inifile:
+plugins: timeout-1.2.1
+timeout: 3.0s method: signal
+collected 0 items / 1 errors
+
+==================================== ERRORS ====================================
+_______________________ ERROR collecting test_student.py _______________________
+ImportError while importing test module '/home/usama/Documents/ITC/assignments/A4/assignment72/test_student.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+test_student.py:1: in <module>
+    from a05 import word_count
+E   ImportError: cannot import name word_count
+!!!!!!!!!!!!!!!!!!! Interrupted: 1 errors during collection !!!!!!!!!!!!!!!!!!!!
+=========================== 1 error in 0.36 seconds ============================
+============================= test session starts ==============================
+platform linux2 -- Python 2.7.13, pytest-3.0.7, py-1.4.33, pluggy-0.4.0
+rootdir: /home/usama/Documents/ITC/assignments/A4/assignment72, inifile:
+plugins: timeout-1.2.1
+timeout: 3.0s method: signal
+collected 0 items / 1 errors
+
+==================================== ERRORS ====================================
+_______________________ ERROR collecting test_student.py _______________________
+/home/usama/anaconda2/lib/python2.7/site-packages/_pytest/python.py:418: in _importtestmodule
+    mod = self.fspath.pyimport(ensuresyspath=importmode)
+/home/usama/anaconda2/lib/python2.7/site-packages/py/_path/local.py:662: in pyimport
+    __import__(modname)
+/home/usama/anaconda2/lib/python2.7/site-packages/_pytest/assertion/rewrite.py:216: in load_module
+    py.builtin.exec_(co, mod.__dict__)
+test_student.py:1: in <module>
+    from a05 import word_count
+E     File "/home/usama/Documents/ITC/assignments/A4/assignment72/a05.py", line 11
+E       return dicdef count_word(x):
+E                              ^
+E   SyntaxError: invalid syntax
+!!!!!!!!!!!!!!!!!!! Interrupted: 1 errors during collection !!!!!!!!!!!!!!!!!!!!
+=========================== 1 error in 0.65 seconds ============================
+============================= test session starts ==============================
+platform linux2 -- Python 2.7.13, pytest-3.0.7, py-1.4.33, pluggy-0.4.0
+rootdir: /home/usama/Documents/ITC/assignments/A4/assignment72, inifile:
+plugins: timeout-1.2.1
+timeout: 3.0s method: signal
+collected 0 items / 1 errors
+
+==================================== ERRORS ====================================
+_______________________ ERROR collecting test_student.py _______________________
+/home/usama/anaconda2/lib/python2.7/site-packages/_pytest/python.py:418: in _importtestmodule
+    mod = self.fspath.pyimport(ensuresyspath=importmode)
+/home/usama/anaconda2/lib/python2.7/site-packages/py/_path/local.py:662: in pyimport
+    __import__(modname)
+/home/usama/anaconda2/lib/python2.7/site-packages/_pytest/assertion/rewrite.py:216: in load_module
+    py.builtin.exec_(co, mod.__dict__)
+test_student.py:1: in <module>
+    from a05 import word_count
+E     File "/home/usama/Documents/ITC/assignments/A4/assignment72/a05.py", line 11
+E       return dicdef count_word(x):
+E                              ^
+E   SyntaxError: invalid syntax
+!!!!!!!!!!!!!!!!!!! Interrupted: 1 errors during collection !!!!!!!!!!!!!!!!!!!!
+=========================== 1 error in 0.70 seconds ============================
+============================= test session starts ==============================
+platform linux2 -- Python 2.7.13, pytest-3.0.7, py-1.4.33, pluggy-0.4.0
+rootdir: /home/usama/Documents/ITC/assignments/A4/assignment72, inifile:
+plugins: timeout-1.2.1
+timeout: 3.0s method: signal
+collected 0 items / 1 errors
+
+==================================== ERRORS ====================================
+_______________________ ERROR collecting test_student.py _______________________
+ImportError while importing test module '/home/usama/Documents/ITC/assignments/A4/assignment72/test_student.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+test_student.py:1: in <module>
+    from a05 import word_count
+E   ImportError: cannot import name word_count
+!!!!!!!!!!!!!!!!!!! Interrupted: 1 errors during collection !!!!!!!!!!!!!!!!!!!!
+=========================== 1 error in 0.34 seconds ============================
+============================= test session starts ==============================
+platform linux2 -- Python 2.7.13, pytest-3.0.7, py-1.4.33, pluggy-0.4.0
+rootdir: /home/usama/Documents/ITC/assignments/A4/assignment72, inifile:
+plugins: timeout-1.2.1
+timeout: 3.0s method: signal
+collected 13 items
+
+test_student.py ....FF.FFFFFF
+
+=================================== FAILURES ===================================
+______________________________ test_expanded_list ______________________________
+
+    def test_expanded_list():
+>           assert(
+                word_count('one,\ntwo,\nthree')=={'one': 1, 'two': 1, 'three': 1}
+            )
+E           AssertionError: assert {'\nthree': 1...: 1, 'one': 1} == {'one': 1, 'th...: 1, 'two': 1}
+E             Omitting 1 identical items, use -v to show
+E             Left contains more items:
+E             {'\nthree': 1, '\ntwo': 1}
+E             Right contains more items:
+E             {'three': 1, 'two': 1}
+E             Use -v to get the full diff
+
+test_student.py:23: AssertionError
+___________________________ test_ignores_punctuation ___________________________
+
+    def test_ignores_punctuation():
+>           assert(
+                word_count('car : carpet as java : javascript')=={'car': 1, 'carpet': 1, 'as': 1, 'java': 1, 'javascript': 1}
+            )
+E           AssertionError: assert {':': 2, 'as'...rpet': 1, ...} == {'as': 1, 'car...java': 1, ...}
+E             Omitting 5 identical items, use -v to show
+E             Left contains more items:
+E             {':': 2}
+E             Use -v to get the full diff
+
+test_student.py:28: AssertionError
+_____________________________ test_normalize_case ______________________________
+
+    def test_normalize_case():
+>           assert(
+                word_count('go Go GO Stop stop')=={'go': 3, 'stop': 2}
+            )
+E           AssertionError: assert {'GO': 1, 'Go... 'go': 1, ...} == {'go': 3, 'stop': 2}
+E             Differing items:
+E             {'go': 1} != {'go': 3}
+E             {'stop': 1} != {'stop': 2}
+E             Left contains more items:
+E             {'GO': 1, 'Go': 1, 'Stop': 1}
+E             Use -v to get the full diff
+
+test_student.py:39: AssertionError
+_______________________________ test_apostrophes _______________________________
+
+    def test_apostrophes():
+>           assert(
+                word_count("First: don't laugh. Then: don't cry.")=={'first': 1, "don't": 2, 'laugh': 1, 'then': 1, 'cry': 1}
+            )
+E           assert {'': 2, 'Firs...'cry': 1, ...} == {'cry': 1, "do...augh': 1, ...}
+E             Omitting 3 identical items, use -v to show
+E             Left contains more items:
+E             {'': 2, 'First:': 1, 'Then:': 1}
+E             Right contains more items:
+E             {'first': 1, 'then': 1}
+E             Use -v to get the full diff
+
+test_student.py:44: AssertionError
+_______________________________ test_quotations ________________________________
+
+    def test_quotations():
+>           assert(
+                word_count("Joe can't tell between 'large' and large.")=={'joe': 1, "can't": 1, 'tell': 1, 'between': 1, 'large': 2,
+                 'and': 1}
+            )
+E           assert {'': 1, "'lar...'and': 1, ...} == {'and': 1, 'be...'joe': 1, ...}
+E             Omitting 4 identical items, use -v to show
+E             Differing items:
+E             {'large': 1} != {'large': 2}
+E             Left contains more items:
+E             {'': 1, "'large'": 1, 'Joe': 1}
+E             Right contains more items:
+E             {'joe': 1}
+E             Use -v to get the full diff
+
+test_student.py:48: AssertionError
+_________________ test_multiple_spaces_not_detected_as_a_word __________________
+
+    def test_multiple_spaces_not_detected_as_a_word():
+>           assert(
+                word_count(' multiple   whitespaces')=={'multiple': 1, 'whitespaces': 1}
+            )
+E           AssertionError: assert {'': 3, 'mult...itespaces': 1} == {'multiple': 1...itespaces': 1}
+E             Omitting 2 identical items, use -v to show
+E             Left contains more items:
+E             {'': 3}
+E             Use -v to get the full diff
+
+test_student.py:54: AssertionError
+__________________________________ test_tabs ___________________________________
+
+    def test_tabs():
+>           assert(
+                word_count('rah rah ah ah ah\troma roma ma\tga ga oh la la\t'
+                           'want your bad romance')=={'rah': 2, 'ah': 3, 'roma': 2, 'ma': 1, 'ga': 2, 'oh': 1, 'la': 2,
+                 'want': 1, 'your': 1, 'bad': 1, 'romance': 1}
+            )
+E           AssertionError: assert {'ah': 2, 'ah... 'ga': 1, ...} == {'ah': 3, 'bad... 'la': 2, ...}
+E             Omitting 5 identical items, use -v to show
+E             Differing items:
+E             {'ah': 2} != {'ah': 3}
+E             {'roma': 1} != {'roma': 2}
+E             {'ga': 1} != {'ga': 2}
+E             {'la': 1} != {'la': 2}
+E             Left contains more items:
+E             {'ah\troma': 1, 'la\twant': 1, 'ma\tga': 1}
+E             Right contains more items:
+E             {'ma': 1, 'want': 1}
+E             Use -v to get the full diff
+
+test_student.py:61: AssertionError
+____________________________ test_non_alphanumeric _____________________________
+
+    def test_non_alphanumeric():
+>           assert(
+                word_count('hey,my_spacebar_is_broken.')=={'hey': 1, 'my': 1, 'spacebar': 1, 'is': 1, 'broken': 1}
+            )
+E           AssertionError: assert {'': 1, 'hey'...is_broken': 1} == {'broken': 1, ... 'my': 1, ...}
+E             Omitting 1 identical items, use -v to show
+E             Left contains more items:
+E             {'': 1, 'my_spacebar_is_broken': 1}
+E             Right contains more items:
+E             {'broken': 1, 'is': 1, 'my': 1, 'spacebar': 1}
+E             Use -v to get the full diff
+
+test_student.py:68: AssertionError
+====================== 8 failed, 5 passed in 0.22 seconds ======================
+============================= test session starts ==============================
+platform linux2 -- Python 2.7.13, pytest-3.0.7, py-1.4.33, pluggy-0.4.0
+rootdir: /home/usama/Documents/ITC/assignments/A4/assignment72, inifile:
+plugins: timeout-1.2.1
+timeout: 3.0s method: signal
+collected 13 items
+
+test_student.py FFFFFFFFFFFFF
+
+=================================== FAILURES ===================================
+_____________________________ test_count_one_word ______________________________
+
+    def test_count_one_word():
+>       assert(word_count('word')=={'word': 1}
+            )
+E       AssertionError: assert ({'word': 1},...7f23f7fa3398>) == {'word': 1}
+E         Use -v to get the full diff
+
+test_student.py:4: AssertionError
+____________________________ test_count_one_of_each ____________________________
+
+    def test_count_one_of_each():
+>           assert(
+                word_count('one of each')=={'one': 1, 'of': 1, 'each': 1}
+            )
+E           AssertionError: assert ({'each': 1, ...7f23f7fa3398>) == {'each': 1, 'of': 1, 'one': 1}
+E             Use -v to get the full diff
+
+test_student.py:8: AssertionError
+__________________ test_count_multiple_occurrences_of_a_word ___________________
+
+    def test_count_multiple_occurrences_of_a_word():
+>           assert(
+                word_count('one fish two fish red fish blue fish')=={'one': 1, 'fish': 4, 'two': 1, 'red': 1, 'blue': 1}
+            )
+E           AssertionError: assert ({'blue': 1, ...7f23f7fa3398>) == {'blue': 1, 'f...'red': 1, ...}
+E             Use -v to get the full diff
+
+test_student.py:13: AssertionError
+______________________________ test_cramped_list _______________________________
+
+    def test_cramped_list():
+>           assert(
+                word_count('one,two,three')=={'one': 1, 'two': 1, 'three': 1}
+            )
+E           AssertionError: assert ({'one': 1, '...7f23f7fa3398>) == {'one': 1, 'th...: 1, 'two': 1}
+E             Use -v to get the full diff
+
+test_student.py:18: AssertionError
+______________________________ test_expanded_list ______________________________
+
+    def test_expanded_list():
+>           assert(
+                word_count('one,\ntwo,\nthree')=={'one': 1, 'two': 1, 'three': 1}
+            )
+E           AssertionError: assert ({'\nthree': ...7f23f7fa3398>) == {'one': 1, 'th...: 1, 'two': 1}
+E             Use -v to get the full diff
+
+test_student.py:23: AssertionError
+___________________________ test_ignores_punctuation ___________________________
+
+    def test_ignores_punctuation():
+>           assert(
+                word_count('car : carpet as java : javascript')=={'car': 1, 'carpet': 1, 'as': 1, 'java': 1, 'javascript': 1}
+            )
+E           AssertionError: assert ({':': 2, 'as...7f23f7fa3398>) == {'as': 1, 'car...java': 1, ...}
+E             Use -v to get the full diff
+
+test_student.py:28: AssertionError
+_____________________________ test_include_numbers _____________________________
+
+    def test_include_numbers():
+>           assert(
+                word_count('testing 1 2 testing')=={'testing': 2, '1': 1, '2': 1}
+            )
+E           AssertionError: assert ({'1': 1, '2'...7f23f7fa3398>) == {'1': 1, '2': 1, 'testing': 2}
+E             Use -v to get the full diff
+
+test_student.py:34: AssertionError
+_____________________________ test_normalize_case ______________________________
+
+    def test_normalize_case():
+>           assert(
+                word_count('go Go GO Stop stop')=={'go': 3, 'stop': 2}
+            )
+E           AssertionError: assert ({'GO': 1, 'G...7f23f7fa3398>) == {'go': 3, 'stop': 2}
+E             Use -v to get the full diff
+
+test_student.py:39: AssertionError
+_______________________________ test_apostrophes _______________________________
+
+    def test_apostrophes():
+>           assert(
+                word_count("First: don't laugh. Then: don't cry.")=={'first': 1, "don't": 2, 'laugh': 1, 'then': 1, 'cry': 1}
+            )
+E           assert ({'': 2, 'Fir...7f23f7fa3398>) == {'cry': 1, "do...augh': 1, ...}
+E             Use -v to get the full diff
+
+test_student.py:44: AssertionError
+_______________________________ test_quotations ________________________________
+
+    def test_quotations():
+>           assert(
+                word_count("Joe can't tell between 'large' and large.")=={'joe': 1, "can't": 1, 'tell': 1, 'between': 1, 'large': 2,
+                 'and': 1}
+            )
+E           assert ({'': 1, "'la...7f23f7fa3398>) == {'and': 1, 'be...'joe': 1, ...}
+E             Use -v to get the full diff
+
+test_student.py:48: AssertionError
+_________________ test_multiple_spaces_not_detected_as_a_word __________________
+
+    def test_multiple_spaces_not_detected_as_a_word():
+>           assert(
+                word_count(' multiple   whitespaces')=={'multiple': 1, 'whitespaces': 1}
+            )
+E           AssertionError: assert ({'': 3, 'mul...7f23f7fa3398>) == {'multiple': 1...itespaces': 1}
+E             Use -v to get the full diff
+
+test_student.py:54: AssertionError
+__________________________________ test_tabs ___________________________________
+
+    def test_tabs():
+>           assert(
+                word_count('rah rah ah ah ah\troma roma ma\tga ga oh la la\t'
+                           'want your bad romance')=={'rah': 2, 'ah': 3, 'roma': 2, 'ma': 1, 'ga': 2, 'oh': 1, 'la': 2,
+                 'want': 1, 'your': 1, 'bad': 1, 'romance': 1}
+            )
+E           AssertionError: assert ({'ah': 2, 'a...7f23f7fa3398>) == {'ah': 3, 'bad... 'la': 2, ...}
+E             Use -v to get the full diff
+
+test_student.py:61: AssertionError
+____________________________ test_non_alphanumeric _____________________________
+
+    def test_non_alphanumeric():
+>           assert(
+                word_count('hey,my_spacebar_is_broken.')=={'hey': 1, 'my': 1, 'spacebar': 1, 'is': 1, 'broken': 1}
+            )
+E           AssertionError: assert ({'': 1, 'hey...7f23f7fa3398>) == {'broken': 1, ... 'my': 1, ...}
+E             Use -v to get the full diff
+
+test_student.py:68: AssertionError
+========================== 13 failed in 0.30 seconds ===========================
+============================= test session starts ==============================
+platform linux2 -- Python 2.7.13, pytest-3.0.7, py-1.4.33, pluggy-0.4.0
+rootdir: /home/usama/Documents/ITC/assignments/A4/assignment72, inifile:
+plugins: timeout-1.2.1
+timeout: 3.0s method: signal
+collected 13 items
+
+test_student.py ....FF.FFFFFF
+
+=================================== FAILURES ===================================
+______________________________ test_expanded_list ______________________________
+
+    def test_expanded_list():
+>           assert(
+                word_count('one,\ntwo,\nthree')=={'one': 1, 'two': 1, 'three': 1}
+            )
+E           AssertionError: assert {'\nthree': 1...: 1, 'one': 1} == {'one': 1, 'th...: 1, 'two': 1}
+E             Omitting 1 identical items, use -v to show
+E             Left contains more items:
+E             {'\nthree': 1, '\ntwo': 1}
+E             Right contains more items:
+E             {'three': 1, 'two': 1}
+E             Use -v to get the full diff
+
+test_student.py:23: AssertionError
+___________________________ test_ignores_punctuation ___________________________
+
+    def test_ignores_punctuation():
+>           assert(
+                word_count('car : carpet as java : javascript')=={'car': 1, 'carpet': 1, 'as': 1, 'java': 1, 'javascript': 1}
+            )
+E           AssertionError: assert {':': 2, 'as'...rpet': 1, ...} == {'as': 1, 'car...java': 1, ...}
+E             Omitting 5 identical items, use -v to show
+E             Left contains more items:
+E             {':': 2}
+E             Use -v to get the full diff
+
+test_student.py:28: AssertionError
+_____________________________ test_normalize_case ______________________________
+
+    def test_normalize_case():
+>           assert(
+                word_count('go Go GO Stop stop')=={'go': 3, 'stop': 2}
+            )
+E           AssertionError: assert {'GO': 1, 'Go... 'go': 1, ...} == {'go': 3, 'stop': 2}
+E             Differing items:
+E             {'go': 1} != {'go': 3}
+E             {'stop': 1} != {'stop': 2}
+E             Left contains more items:
+E             {'GO': 1, 'Go': 1, 'Stop': 1}
+E             Use -v to get the full diff
+
+test_student.py:39: AssertionError
+_______________________________ test_apostrophes _______________________________
+
+    def test_apostrophes():
+>           assert(
+                word_count("First: don't laugh. Then: don't cry.")=={'first': 1, "don't": 2, 'laugh': 1, 'then': 1, 'cry': 1}
+            )
+E           assert {'': 2, 'Firs...'cry': 1, ...} == {'cry': 1, "do...augh': 1, ...}
+E             Omitting 3 identical items, use -v to show
+E             Left contains more items:
+E             {'': 2, 'First:': 1, 'Then:': 1}
+E             Right contains more items:
+E             {'first': 1, 'then': 1}
+E             Use -v to get the full diff
+
+test_student.py:44: AssertionError
+_______________________________ test_quotations ________________________________
+
+    def test_quotations():
+>           assert(
+                word_count("Joe can't tell between 'large' and large.")=={'joe': 1, "can't": 1, 'tell': 1, 'between': 1, 'large': 2,
+                 'and': 1}
+            )
+E           assert {'': 1, "'lar...'and': 1, ...} == {'and': 1, 'be...'joe': 1, ...}
+E             Omitting 4 identical items, use -v to show
+E             Differing items:
+E             {'large': 1} != {'large': 2}
+E             Left contains more items:
+E             {'': 1, "'large'": 1, 'Joe': 1}
+E             Right contains more items:
+E             {'joe': 1}
+E             Use -v to get the full diff
+
+test_student.py:48: AssertionError
+_________________ test_multiple_spaces_not_detected_as_a_word __________________
+
+    def test_multiple_spaces_not_detected_as_a_word():
+>           assert(
+                word_count(' multiple   whitespaces')=={'multiple': 1, 'whitespaces': 1}
+            )
+E           AssertionError: assert {'': 3, 'mult...itespaces': 1} == {'multiple': 1...itespaces': 1}
+E             Omitting 2 identical items, use -v to show
+E             Left contains more items:
+E             {'': 3}
+E             Use -v to get the full diff
+
+test_student.py:54: AssertionError
+__________________________________ test_tabs ___________________________________
+
+    def test_tabs():
+>           assert(
+                word_count('rah rah ah ah ah\troma roma ma\tga ga oh la la\t'
+                           'want your bad romance')=={'rah': 2, 'ah': 3, 'roma': 2, 'ma': 1, 'ga': 2, 'oh': 1, 'la': 2,
+                 'want': 1, 'your': 1, 'bad': 1, 'romance': 1}
+            )
+E           AssertionError: assert {'ah': 2, 'ah... 'ga': 1, ...} == {'ah': 3, 'bad... 'la': 2, ...}
+E             Omitting 5 identical items, use -v to show
+E             Differing items:
+E             {'ah': 2} != {'ah': 3}
+E             {'roma': 1} != {'roma': 2}
+E             {'ga': 1} != {'ga': 2}
+E             {'la': 1} != {'la': 2}
+E             Left contains more items:
+E             {'ah\troma': 1, 'la\twant': 1, 'ma\tga': 1}
+E             Right contains more items:
+E             {'ma': 1, 'want': 1}
+E             Use -v to get the full diff
+
+test_student.py:61: AssertionError
+____________________________ test_non_alphanumeric _____________________________
+
+    def test_non_alphanumeric():
+>           assert(
+                word_count('hey,my_spacebar_is_broken.')=={'hey': 1, 'my': 1, 'spacebar': 1, 'is': 1, 'broken': 1}
+            )
+E           AssertionError: assert {'': 1, 'hey'...is_broken': 1} == {'broken': 1, ... 'my': 1, ...}
+E             Omitting 1 identical items, use -v to show
+E             Left contains more items:
+E             {'': 1, 'my_spacebar_is_broken': 1}
+E             Right contains more items:
+E             {'broken': 1, 'is': 1, 'my': 1, 'spacebar': 1}
+E             Use -v to get the full diff
+
+test_student.py:68: AssertionError
+====================== 8 failed, 5 passed in 0.21 seconds ======================
+============================= test session starts ==============================
+platform linux2 -- Python 2.7.13, pytest-3.0.7, py-1.4.33, pluggy-0.4.0
+rootdir: /home/usama/Documents/ITC/assignments/A4/assignment72, inifile:
+plugins: timeout-1.2.1
+timeout: 3.0s method: signal
+collected 13 items
+
+test_student.py ....FF.FFFFFF
+
+=================================== FAILURES ===================================
+______________________________ test_expanded_list ______________________________
+
+    def test_expanded_list():
+>           assert(
+                word_count('one,\ntwo,\nthree')=={'one': 1, 'two': 1, 'three': 1}
+            )
+E           AssertionError: assert {'\nthree': 1...: 1, 'one': 1} == {'one': 1, 'th...: 1, 'two': 1}
+E             Omitting 1 identical items, use -v to show
+E             Left contains more items:
+E             {'\nthree': 1, '\ntwo': 1}
+E             Right contains more items:
+E             {'three': 1, 'two': 1}
+E             Use -v to get the full diff
+
+test_student.py:23: AssertionError
+___________________________ test_ignores_punctuation ___________________________
+
+    def test_ignores_punctuation():
+>           assert(
+                word_count('car : carpet as java : javascript')=={'car': 1, 'carpet': 1, 'as': 1, 'java': 1, 'javascript': 1}
+            )
+E           AssertionError: assert {':': 2, 'as'...rpet': 1, ...} == {'as': 1, 'car...java': 1, ...}
+E             Omitting 5 identical items, use -v to show
+E             Left contains more items:
+E             {':': 2}
+E             Use -v to get the full diff
+
+test_student.py:28: AssertionError
+_____________________________ test_normalize_case ______________________________
+
+    def test_normalize_case():
+>           assert(
+                word_count('go Go GO Stop stop')=={'go': 3, 'stop': 2}
+            )
+E           AssertionError: assert {'GO': 1, 'Go... 'go': 1, ...} == {'go': 3, 'stop': 2}
+E             Differing items:
+E             {'go': 1} != {'go': 3}
+E             {'stop': 1} != {'stop': 2}
+E             Left contains more items:
+E             {'GO': 1, 'Go': 1, 'Stop': 1}
+E             Use -v to get the full diff
+
+test_student.py:39: AssertionError
+_______________________________ test_apostrophes _______________________________
+
+    def test_apostrophes():
+>           assert(
+                word_count("First: don't laugh. Then: don't cry.")=={'first': 1, "don't": 2, 'laugh': 1, 'then': 1, 'cry': 1}
+            )
+E           assert {'': 2, 'Firs...'cry': 1, ...} == {'cry': 1, "do...augh': 1, ...}
+E             Omitting 3 identical items, use -v to show
+E             Left contains more items:
+E             {'': 2, 'First:': 1, 'Then:': 1}
+E             Right contains more items:
+E             {'first': 1, 'then': 1}
+E             Use -v to get the full diff
+
+test_student.py:44: AssertionError
+_______________________________ test_quotations ________________________________
+
+    def test_quotations():
+>           assert(
+                word_count("Joe can't tell between 'large' and large.")=={'joe': 1, "can't": 1, 'tell': 1, 'between': 1, 'large': 2,
+                 'and': 1}
+            )
+E           assert {'': 1, "'lar...'and': 1, ...} == {'and': 1, 'be...'joe': 1, ...}
+E             Omitting 4 identical items, use -v to show
+E             Differing items:
+E             {'large': 1} != {'large': 2}
+E             Left contains more items:
+E             {'': 1, "'large'": 1, 'Joe': 1}
+E             Right contains more items:
+E             {'joe': 1}
+E             Use -v to get the full diff
+
+test_student.py:48: AssertionError
+_________________ test_multiple_spaces_not_detected_as_a_word __________________
+
+    def test_multiple_spaces_not_detected_as_a_word():
+>           assert(
+                word_count(' multiple   whitespaces')=={'multiple': 1, 'whitespaces': 1}
+            )
+E           AssertionError: assert {'': 3, 'mult...itespaces': 1} == {'multiple': 1...itespaces': 1}
+E             Omitting 2 identical items, use -v to show
+E             Left contains more items:
+E             {'': 3}
+E             Use -v to get the full diff
+
+test_student.py:54: AssertionError
+__________________________________ test_tabs ___________________________________
+
+    def test_tabs():
+>           assert(
+                word_count('rah rah ah ah ah\troma roma ma\tga ga oh la la\t'
+                           'want your bad romance')=={'rah': 2, 'ah': 3, 'roma': 2, 'ma': 1, 'ga': 2, 'oh': 1, 'la': 2,
+                 'want': 1, 'your': 1, 'bad': 1, 'romance': 1}
+            )
+E           AssertionError: assert {'ah': 2, 'ah... 'ga': 1, ...} == {'ah': 3, 'bad... 'la': 2, ...}
+E             Omitting 5 identical items, use -v to show
+E             Differing items:
+E             {'ah': 2} != {'ah': 3}
+E             {'roma': 1} != {'roma': 2}
+E             {'ga': 1} != {'ga': 2}
+E             {'la': 1} != {'la': 2}
+E             Left contains more items:
+E             {'ah\troma': 1, 'la\twant': 1, 'ma\tga': 1}
+E             Right contains more items:
+E             {'ma': 1, 'want': 1}
+E             Use -v to get the full diff
+
+test_student.py:61: AssertionError
+____________________________ test_non_alphanumeric _____________________________
+
+    def test_non_alphanumeric():
+>           assert(
+                word_count('hey,my_spacebar_is_broken.')=={'hey': 1, 'my': 1, 'spacebar': 1, 'is': 1, 'broken': 1}
+            )
+E           AssertionError: assert {'': 1, 'hey'...is_broken': 1} == {'broken': 1, ... 'my': 1, ...}
+E             Omitting 1 identical items, use -v to show
+E             Left contains more items:
+E             {'': 1, 'my_spacebar_is_broken': 1}
+E             Right contains more items:
+E             {'broken': 1, 'is': 1, 'my': 1, 'spacebar': 1}
+E             Use -v to get the full diff
+
+test_student.py:68: AssertionError
+====================== 8 failed, 5 passed in 0.21 seconds ======================
+============================= test session starts ==============================
+platform linux2 -- Python 2.7.13, pytest-3.0.7, py-1.4.33, pluggy-0.4.0
+rootdir: /home/usama/Documents/ITC/assignments/A4/assignment72, inifile:
+plugins: timeout-1.2.1
+timeout: 3.0s method: signal
+collected 13 items
+
+test_student.py .......FFF...
+
+=================================== FAILURES ===================================
+_____________________________ test_normalize_case ______________________________
+
+    def test_normalize_case():
+>           assert(
+                word_count('go Go GO Stop stop')=={'go': 3, 'stop': 2}
+            )
+E           AssertionError: assert {'GO': 1, 'Go... 'go': 1, ...} == {'go': 3, 'stop': 2}
+E             Differing items:
+E             {'go': 1} != {'go': 3}
+E             {'stop': 1} != {'stop': 2}
+E             Left contains more items:
+E             {'GO': 1, 'Go': 1, 'Stop': 1}
+E             Use -v to get the full diff
+
+test_student.py:39: AssertionError
+_______________________________ test_apostrophes _______________________________
+
+    def test_apostrophes():
+>           assert(
+                word_count("First: don't laugh. Then: don't cry.")=={'first': 1, "don't": 2, 'laugh': 1, 'then': 1, 'cry': 1}
+            )
+E           assert {'First': 1, ...'don': 2, ...} == {'cry': 1, "do...augh': 1, ...}
+E             Omitting 2 identical items, use -v to show
+E             Left contains more items:
+E             {'First': 1, 'Then': 1, 'don': 2, 't': 2}
+E             Right contains more items:
+E             {"don't": 2, 'first': 1, 'then': 1}
+E             Use -v to get the full diff
+
+test_student.py:44: AssertionError
+_______________________________ test_quotations ________________________________
+
+    def test_quotations():
+>           assert(
+                word_count("Joe can't tell between 'large' and large.")=={'joe': 1, "can't": 1, 'tell': 1, 'between': 1, 'large': 2,
+                 'and': 1}
+            )
+E           assert {'Joe': 1, 'a...'can': 1, ...} == {'and': 1, 'be...'joe': 1, ...}
+E             Omitting 4 identical items, use -v to show
+E             Left contains more items:
+E             {'Joe': 1, 'can': 1, 't': 1}
+E             Right contains more items:
+E             {"can't": 1, 'joe': 1}
+E             Use -v to get the full diff
+
+test_student.py:48: AssertionError
+===================== 3 failed, 10 passed in 0.14 seconds ======================
+============================= test session starts ==============================
+platform linux2 -- Python 2.7.13, pytest-3.0.7, py-1.4.33, pluggy-0.4.0
+rootdir: /home/usama/Documents/ITC/assignments/A4/assignment72, inifile:
+plugins: timeout-1.2.1
+timeout: 3.0s method: signal
+collected 13 items
+
+test_student.py .......FFF...
+
+=================================== FAILURES ===================================
+_____________________________ test_normalize_case ______________________________
+
+    def test_normalize_case():
+>           assert(
+                word_count('go Go GO Stop stop')=={'go': 3, 'stop': 2}
+            )
+E           AssertionError: assert {'GO': 1, 'Go... 'go': 1, ...} == {'go': 3, 'stop': 2}
+E             Differing items:
+E             {'go': 1} != {'go': 3}
+E             {'stop': 1} != {'stop': 2}
+E             Left contains more items:
+E             {'GO': 1, 'Go': 1, 'Stop': 1}
+E             Use -v to get the full diff
+
+test_student.py:39: AssertionError
+_______________________________ test_apostrophes _______________________________
+
+    def test_apostrophes():
+>           assert(
+                word_count("First: don't laugh. Then: don't cry.")=={'first': 1, "don't": 2, 'laugh': 1, 'then': 1, 'cry': 1}
+            )
+E           assert {'First': 1, ...on't": 2, ...} == {'cry': 1, "do...augh': 1, ...}
+E             Omitting 3 identical items, use -v to show
+E             Left contains more items:
+E             {'First': 1, 'Then': 1}
+E             Right contains more items:
+E             {'first': 1, 'then': 1}
+E             Use -v to get the full diff
+
+test_student.py:44: AssertionError
+_______________________________ test_quotations ________________________________
+
+    def test_quotations():
+>           assert(
+                word_count("Joe can't tell between 'large' and large.")=={'joe': 1, "can't": 1, 'tell': 1, 'between': 1, 'large': 2,
+                 'and': 1}
+            )
+E           assert {"'large'": 1...ween': 1, ...} == {'and': 1, 'be...'joe': 1, ...}
+E             Omitting 4 identical items, use -v to show
+E             Differing items:
+E             {'large': 1} != {'large': 2}
+E             Left contains more items:
+E             {"'large'": 1, 'Joe': 1}
+E             Right contains more items:
+E             {'joe': 1}
+E             Use -v to get the full diff
+
+test_student.py:48: AssertionError
+===================== 3 failed, 10 passed in 0.17 seconds ======================
+============================= test session starts ==============================
+platform linux2 -- Python 2.7.13, pytest-3.0.7, py-1.4.33, pluggy-0.4.0
+rootdir: /home/usama/Documents/ITC/assignments/A4/assignment72, inifile:
+plugins: timeout-1.2.1
+timeout: 3.0s method: signal
+collected 13 items
+
+test_student.py .......FFF...
+
+=================================== FAILURES ===================================
+_____________________________ test_normalize_case ______________________________
+
+    def test_normalize_case():
+>           assert(
+                word_count('go Go GO Stop stop')=={'go': 3, 'stop': 2}
+            )
+E           AssertionError: assert {'GO': 1, 'Go... 'go': 1, ...} == {'go': 3, 'stop': 2}
+E             Differing items:
+E             {'go': 1} != {'go': 3}
+E             {'stop': 1} != {'stop': 2}
+E             Left contains more items:
+E             {'GO': 1, 'Go': 1, 'Stop': 1}
+E             Use -v to get the full diff
+
+test_student.py:39: AssertionError
+_______________________________ test_apostrophes _______________________________
+
+    def test_apostrophes():
+>           assert(
+                word_count("First: don't laugh. Then: don't cry.")=={'first': 1, "don't": 2, 'laugh': 1, 'then': 1, 'cry': 1}
+            )
+E           assert {'First': 1, ...on't": 2, ...} == {'cry': 1, "do...augh': 1, ...}
+E             Omitting 3 identical items, use -v to show
+E             Left contains more items:
+E             {'First': 1, 'Then': 1}
+E             Right contains more items:
+E             {'first': 1, 'then': 1}
+E             Use -v to get the full diff
+
+test_student.py:44: AssertionError
+_______________________________ test_quotations ________________________________
+
+    def test_quotations():
+>           assert(
+                word_count("Joe can't tell between 'large' and large.")=={'joe': 1, "can't": 1, 'tell': 1, 'between': 1, 'large': 2,
+                 'and': 1}
+            )
+E           assert {"'large'": 1...ween': 1, ...} == {'and': 1, 'be...'joe': 1, ...}
+E             Omitting 4 identical items, use -v to show
+E             Differing items:
+E             {'large': 1} != {'large': 2}
+E             Left contains more items:
+E             {"'large'": 1, 'Joe': 1}
+E             Right contains more items:
+E             {'joe': 1}
+E             Use -v to get the full diff
+
+test_student.py:48: AssertionError
+===================== 3 failed, 10 passed in 0.17 seconds ======================
+============================= test session starts ==============================
+platform linux2 -- Python 2.7.13, pytest-3.0.7, py-1.4.33, pluggy-0.4.0
+rootdir: /home/usama/Documents/ITC/assignments/A4/assignment72, inifile:
+plugins: timeout-1.2.1
+timeout: 3.0s method: signal
+collected 13 items
+
+test_student.py .........F...
+
+=================================== FAILURES ===================================
+_______________________________ test_quotations ________________________________
+
+    def test_quotations():
+>           assert(
+                word_count("Joe can't tell between 'large' and large.")=={'joe': 1, "can't": 1, 'tell': 1, 'between': 1, 'large': 2,
+                 'and': 1}
+            )
+E           assert {"'large'": 1...an't": 1, ...} == {'and': 1, 'be...'joe': 1, ...}
+E             Omitting 5 identical items, use -v to show
+E             Differing items:
+E             {'large': 1} != {'large': 2}
+E             Left contains more items:
+E             {"'large'": 1}
+E             Use -v to get the full diff
+
+test_student.py:48: AssertionError
+===================== 1 failed, 12 passed in 0.15 seconds ======================
+============================= test session starts ==============================
+platform linux2 -- Python 2.7.13, pytest-3.0.7, py-1.4.33, pluggy-0.4.0
+rootdir: /home/usama/Documents/ITC/assignments/A4/assignment72, inifile:
+plugins: timeout-1.2.1
+timeout: 3.0s method: signal
+collected 13 items
+
+test_student.py .........F...
+
+=================================== FAILURES ===================================
+_______________________________ test_quotations ________________________________
+
+    def test_quotations():
+>           assert(
+                word_count("Joe can't tell between 'large' and large.")=={'joe': 1, "can't": 1, 'tell': 1, 'between': 1, 'large': 2,
+                 'and': 1}
+            )
+E           assert {"'large'": 1...an't": 1, ...} == {'and': 1, 'be...'joe': 1, ...}
+E             Omitting 5 identical items, use -v to show
+E             Differing items:
+E             {'large': 1} != {'large': 2}
+E             Left contains more items:
+E             {"'large'": 1}
+E             Use -v to get the full diff
+
+test_student.py:48: AssertionError
+===================== 1 failed, 12 passed in 0.11 seconds ======================
+============================= test session starts ==============================
+platform linux2 -- Python 2.7.13, pytest-3.0.7, py-1.4.33, pluggy-0.4.0
+rootdir: /home/usama/Documents/ITC/assignments/A4/assignment72, inifile:
+plugins: timeout-1.2.1
+timeout: 3.0s method: signal
+collected 13 items
+
+test_student.py .............
+
+========================== 13 passed in 0.07 seconds ===========================
+============================= test session starts ==============================
+platform linux2 -- Python 2.7.13, pytest-3.0.7, py-1.4.33, pluggy-0.4.0
+rootdir: /home/usama/Documents/ITC/assignments/A4/assignment72, inifile:
+plugins: timeout-1.2.1
+timeout: 3.0s method: signal
+collected 13 items
+
+test_student.py .............
+
+========================== 13 passed in 0.04 seconds ===========================
+============================= test session starts ==============================
+platform linux2 -- Python 2.7.13, pytest-3.0.7, py-1.4.33, pluggy-0.4.0
+rootdir: /home/usama/Documents/ITC/assignments/A4/assignment72, inifile:
+plugins: timeout-1.2.1
+timeout: 3.0s method: signal
+collected 13 items
+
+test_student.py .........F...
+
+=================================== FAILURES ===================================
+_______________________________ test_quotations ________________________________
+
+    def test_quotations():
+>           assert(
+                word_count("Joe can't tell between 'large' and large.")=={'joe': 1, "can't": 1, 'tell': 1, 'between': 1, 'large': 2,
+                 'and': 1}
+            )
+E           assert {"'large'": 1...an't": 1, ...} == {'and': 1, 'be...'joe': 1, ...}
+E             Omitting 5 identical items, use -v to show
+E             Differing items:
+E             {'large': 1} != {'large': 2}
+E             Left contains more items:
+E             {"'large'": 1}
+E             Use -v to get the full diff
+
+test_student.py:48: AssertionError
+===================== 1 failed, 12 passed in 0.18 seconds ======================
+============================= test session starts ==============================
+platform linux2 -- Python 2.7.13, pytest-3.0.7, py-1.4.33, pluggy-0.4.0
+rootdir: /home/usama/Documents/ITC/assignments/A4/assignment72, inifile:
+plugins: timeout-1.2.1
+timeout: 3.0s method: signal
+collected 13 items
+
+test_student.py .............
+
+========================== 13 passed in 0.05 seconds ===========================

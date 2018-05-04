@@ -1,0 +1,30 @@
+============================= test session starts ==============================
+platform linux2 -- Python 2.7.13, pytest-3.0.7, py-1.4.33, pluggy-0.4.0
+rootdir: /home/usama/Assignments/ITC/assignment65, inifile:
+plugins: timeout-1.2.1
+timeout: 3.0s method: signal
+collected 3 items
+
+test_student.py .F.
+
+=================================== FAILURES ===================================
+_______________________________ test_netIncome2 ________________________________
+
+    def test_netIncome2():
+>       assert type(netIncome(20000))==float
+E       AssertionError: assert <type 'int'> == float
+E        +  where <type 'int'> = type(19600)
+E        +    where 19600 = netIncome(20000)
+
+test_student.py:9: AssertionError
+====================== 1 failed, 2 passed in 0.09 seconds ======================
+============================= test session starts ==============================
+platform linux2 -- Python 2.7.13, pytest-3.0.7, py-1.4.33, pluggy-0.4.0
+rootdir: /home/usama/Assignments/ITC/assignment65, inifile:
+plugins: timeout-1.2.1
+timeout: 3.0s method: signal
+collected 3 items
+
+test_student.py ...
+
+=========================== 3 passed in 0.01 seconds ===========================

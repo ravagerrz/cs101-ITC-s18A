@@ -1,0 +1,10 @@
+============================= test session starts ==============================
+platform linux2 -- Python 2.7.13, pytest-3.0.7, py-1.4.33, pluggy-0.4.0
+rootdir: /home/usama/Documents/ITC/assignments/A3/assignment70, inifile:
+plugins: timeout-1.2.1
+timeout: 3.0s method: signal
+collected 7 items
+
+test_student.py .......
+
+=========================== 7 passed in 0.05 seconds ===========================

@@ -1,0 +1,48 @@
+============================= test session starts ==============================
+platform linux2 -- Python 2.7.13, pytest-3.0.7, py-1.4.33, pluggy-0.4.0
+rootdir: /home/usama/Documents/ITC/assignments/A5/assignment74, inifile:
+plugins: timeout-1.2.1
+timeout: 3.0s method: signal
+collected 7 items
+
+test_student.py ......F
+
+=================================== FAILURES ===================================
+__________________________ test_cumulative_marks_i_7 ___________________________
+
+    def test_cumulative_marks_i_7():
+        results = None
+        results_out = None
+>       assert cumulative_marks(results) == results_out
+
+test_student.py:86: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+results = None
+
+    def cumulative_marks(results):
+>       results = (list(tuples) for tuples in results)
+E       TypeError: 'NoneType' object is not iterable
+
+a06.py:8: TypeError
+====================== 1 failed, 6 passed in 0.27 seconds ======================
+============================= test session starts ==============================
+platform linux2 -- Python 2.7.13, pytest-3.0.7, py-1.4.33, pluggy-0.4.0
+rootdir: /home/usama/Documents/ITC/assignments/A5/assignment74, inifile:
+plugins: timeout-1.2.1
+timeout: 3.0s method: signal
+collected 7 items
+
+test_student.py .......
+
+=========================== 7 passed in 0.04 seconds ===========================
+============================= test session starts ==============================
+platform linux2 -- Python 2.7.13, pytest-3.0.7, py-1.4.33, pluggy-0.4.0
+rootdir: /home/usama/Documents/ITC/assignments/A5/assignment74, inifile:
+plugins: timeout-1.2.1
+timeout: 3.0s method: signal
+collected 7 items
+
+test_student.py .......
+
+=========================== 7 passed in 0.03 seconds ===========================
